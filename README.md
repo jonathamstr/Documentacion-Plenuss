@@ -9,8 +9,8 @@ El sistema fue probado contra esta version.
 Las demas dependencias se encuentran dentro del paquete de package.json
 
 En caso de que se tengan errores en las dependencias, se puede utilizar el comando 
-''' 
+`
   npm install 
-'''
+  `
  para poder instalar las dependencias que se necesitan. 
  ()
