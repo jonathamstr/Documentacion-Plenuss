@@ -14,7 +14,7 @@ El archivo esta utiliznado las otras URI para poder realizar las diferentes peti
 ## node_modules
 Guarda las dependencias instaladas para que funcione el sistema. 
 
-## Handrels
+## Handlers
 En esta carpeta de datos tenemos los diferentes manejadores de datos. Aqui almacenamos los diferentes archivos
 que responden a las peticioens que tienen los usuarios. 
 
