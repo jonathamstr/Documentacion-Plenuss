@@ -16,9 +16,11 @@
     "body-parser": "^1.15.0",
     "express": "^4.0.0",
     "jsonpath": "^0.2.7",
+    "sequelize": "^3.30.2",
     "swaggerize-express": "^4.0.0",
     "swaggerize-ui": "^1.0.1",
-    "swagmock": "~0.0.2"
+    "swagmock": "~0.0.2",
+    "tedious": "^1.14.0"
   },
   "devDependencies": {
     "eslint": "^2",

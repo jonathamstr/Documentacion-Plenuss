@@ -1,26 +1,25 @@
 var Connection = require('tedious').Connection;  
-    var config = {  
-        userName: 'sa',  
-        password: 'aitva',  
-        server: 'serveravattia',  
-        options: {database: 'EjerciciosJonathan',instanceName: 'avattia'}  
-    };  
-    //var connection = new Connection(config);  
+var config = require("../config/db.json");
+
+
     var express = require('express');
     var router = express.Router();
-     var Request = require('tedious').Request;
+    var Request = require('tedious').Request;
     var TYPES = require('tedious').TYPES;
     var resultado = {
         columnas: []
     };
+
     var result = {
         data: []
     }
+
     router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
+
     router.get('/', function(req, res) {
         console.log("get tables");
     var connection = new Connection(config);
@@ -35,8 +34,6 @@ var Connection = require('tedious').Connection;
 			console.log('connection to database established');
 		}
 
-
-
      request = new Request("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES order by TABLE_NAME asc;", function(err) {  
         if (err) {  
             console.log(err);}  
@@ -46,21 +43,16 @@ var Connection = require('tedious').Connection;
             columns.forEach(function(column) {  
               if (column.value !== null) {  
                 resultado.columnas.push(column.value);
-
               } 
             });  
 
         });  
   
         request.on('doneProc', function(rowCount, more) {  
-            //console.log(rowCount + ' rows returned!!!!!!!!!!!!!!!!!!!!!!!'); 
             console.log(resultado.columnas);
             res.json(resultado.columnas);  
         });  
         connection.execSql(request); 
-
-
-
 });
 
     });
@@ -104,6 +96,8 @@ router.post('/', function(req, res) {
        
         
 });
+
+
 router.post('/columns', function(req, res) {
     console.log("POST tables/COLUMNS");
     var table = req.body.tabla;
@@ -112,8 +106,6 @@ router.post('/columns', function(req, res) {
     console.log(table);
     console.log(args);
     doQuery(table,args,res);
-    //console.log(result);
-    //res.json(result);
 });
 
 var doQuery = function (tabla,args,res){
@@ -131,7 +123,6 @@ var doQuery = function (tabla,args,res){
 			console.log('connection to database established');
 		}
 
-    //result = {data: []}
     request = new Request('SELECT TOP 1000'+ columns +' FROM ' + tabla.toString() + ";", function(err) {  
         if (err) {  
             console.log(err);}
@@ -162,8 +153,8 @@ router.post('/login', function(req, res) {
     connection.on('connect', function(err){
 
 		if (err){
-			console.log(err);
-			console.log('Unable to connect to database');
+            console.log('Unable to connect to database');
+			return err;
 		} 
 		else {
 			console.log('connection to database established');
@@ -187,7 +178,5 @@ router.post('/login', function(req, res) {
         connection.execSql(request); 
     });
     
-    //console.log(result);
-    //res.json(result);
 });
 module.exports = router;

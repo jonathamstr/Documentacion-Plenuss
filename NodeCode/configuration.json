@@ -1,0 +1,11 @@
+{
+    "config":{
+        "userName": "sa",
+        "password": "aitva",
+        "server" : "serveravattia",
+        "options": {
+            "database": "EjerciciosJonathan",
+            "instanceName":"avattia"
+        }
+    }
+}
