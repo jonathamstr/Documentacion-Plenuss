@@ -35,4 +35,4 @@ var Producto = sequelize.define('p_prod',{
 
 Producto.findAll().then(Productos=>{
     console.log(Productos);
-});
+}); 
