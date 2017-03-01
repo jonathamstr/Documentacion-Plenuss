@@ -1,0 +1,17 @@
+{
+ "ObjectName":"Producto",
+ "ObjectDefinition":"Producto",
+ "ColumnsDefinition":[
+     {"Name":"Producto",
+     "Type":"Sequelize.STRING",
+     "Field":"producto"},
+     {"Name":"Desc1",
+     "Type":"Sequelize.STRING",
+     "Field":"desc1"}
+ ],
+ "ObjectConfigs":{
+     "timestamps":false,
+     "freezeTableName":true,
+     "tableName":"p_prod"
+ }   
+}

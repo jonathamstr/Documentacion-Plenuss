@@ -1,7 +1,8 @@
 var Sequelize = require('sequelize');
 var db = require("../config/db");
+var definition = require("./definitions/p_prod");
 
-var sequelize = new Sequelize(db.options.database,db.userName,db.password,{
+var sequelize = new Sequelize(db.options.database, db.userName, db.password, {
     host: db.server,
     dialect: 'mssql',
     pool: {
@@ -12,31 +13,32 @@ var sequelize = new Sequelize(db.options.database,db.userName,db.password,{
     dialectOptions: {
         instanceName: db.options.instanceName
     }
-        
-    
+
+
 });
 
-var Producto = sequelize.define('p_prod',{
-    Producto: {
-        type: Sequelize.STRING,
-        field: "producto"
-    },
-    Desc1: {
-        type: Sequelize.STRING,
-        field: "desc1"
+var Producto = sequelize.define(definition.ObjectDefinition, {
+        "definition.ColumnsDefinition[0].Name": {
+            type: definition.ColumnsDefinition[0].Type,
+            field: definition.ColumnsDefinition[0].Field
+        },
+        "definition.ColumnsDefinition[1].Name": {
+            type: definition.ColumnsDefinition[1].Type,
+            field: definition.ColumnsDefinition[1].Field
+        }
+    }, {
+        timestamps: false,
+        freezeTableName: true,
+        tableName: "p_prod"
     }
-},
-{
-     timestamps: false,
-      freezeTableName: true,
-}
-/*,{
-    classMethods:{
+    /*,{
+        classMethods:{
 
-    },
-    instanceMethods:{
-        
-    }
-}*/);
+        },
+        instanceMethods:{
+            
+        }
+    }*/
+);
 
 module.exports = Producto;

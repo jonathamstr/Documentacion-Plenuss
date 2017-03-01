@@ -9,13 +9,10 @@ var bodyParser = require('body-parser');
 var swaggerize = require('swaggerize-express');
 var swaggerUi = require('swaggerize-ui');
 var path = require('path');
-<<<<<<< HEAD
 var pprod = require('./handlers/p_prod');
-=======
 
 //Buscamos los controladores que vamos a usar dentro de nuestra aplicacion
-var pprod = require('./handlers/pprod');
->>>>>>> cffce4ef99e6fc35187824b554de802d10251b2a
+//var pprod = require('./handlers/pprod');
 var tablas = require('./handlers/tablas');
 var auth = require('./handlers/auth');
 
