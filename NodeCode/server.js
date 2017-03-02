@@ -15,6 +15,7 @@ var pprod = require('./handlers/p_prod');
 //var pprod = require('./handlers/pprod');
 var tablas = require('./handlers/tablas');
 var auth = require('./handlers/auth');
+var rutinas = require('./handlers/rutinas');
 
 var app = express(); //Creamos una aplicacion que muestra
 var server = http.createServer(app); //Creamos el servidor con la aplicacion
@@ -45,5 +46,6 @@ app.get('/',function(req,res){ //Respondemos a la solicitud GET con Hello World
 app.use('/pprod',pprod); 
 app.use('/tables',tablas);
 app.use('/auth',auth);
+app.use('/rutina',rutinas);
 server.listen(port, function () { //Iniciamos el servidor
 });

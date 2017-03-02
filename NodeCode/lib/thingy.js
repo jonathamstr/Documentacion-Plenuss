@@ -11,6 +11,10 @@ connection.on('connect', function (err) {
         console.log(result);
         connection.close();
     });*/
+   /* buscarRutina('C01').then(result=>{
+        console.log(result);
+        connection.close();
+    });*/
 })
 
 
@@ -88,8 +92,30 @@ function convertToQuery(objectQuery) {
 
 
 function buscarRutina(rutina) {
+    var resultado = {};
     return new Promise(function (resolve, reject) {
         executeStatement(`select * from p_dic where proceso='${rutina}'`, (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                resultado['columnas'] = result;
+                executeStatement(`select * from p_relacion where proceso='${rutina}'`,(err,result)=>{
+                    if(err){
+                        reject(err);
+                    }
+                    else{
+                        resultado['relaciones'] = result;
+                        resolve(resultado);
+                    }
+                })
+            }
+        });
+    });
+}
+
+function buscarRelaciones(rutina){
+    return new Promise(function (resolve, reject) {
+        executeStatement(`select * from p_relacion where proceso='${rutina}'`, (err, result) => {
             if (err) {
                 reject(err);
             } else {
@@ -97,7 +123,6 @@ function buscarRutina(rutina) {
             }
         });
     });
-
 }
 
 
@@ -107,5 +132,5 @@ module.exports = {
     convertToQuery,
     converToObject,
     executeStatement,
-
+    buscarRelaciones
 }
