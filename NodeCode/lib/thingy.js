@@ -6,15 +6,7 @@ var Request = require('tedious').Request;
 
 
 connection.on('connect', function (err) {
-    /*buscarRutina('C01', (err, result) => {
-        console.log('Something');
-        console.log(result);
-        connection.close();
-    });*/
-   /* buscarRutina('C01').then(result=>{
-        console.log(result);
-        connection.close();
-    });*/
+
 })
 
 
@@ -45,7 +37,18 @@ function executeStatement(query, callback) {
     connection.execSql(request);
 }
 
-
+function executePromise(query){
+    return new Promise((resolve,reject)=>{
+        executeStatement(query,(err,result)=>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(result);
+            }
+        })
+    });
+}
 
 function printResult(err, result) {
     console.log(result);
@@ -91,7 +94,7 @@ function convertToQuery(objectQuery) {
 }
 
 
-function buscarRutina(rutina) {
+function buscarRutina(rutina) { 
     var resultado = {};
     return new Promise(function (resolve, reject) {
         executeStatement(`select * from p_dic where proceso='${rutina}'`, (err, result) => {
@@ -125,12 +128,26 @@ function buscarRelaciones(rutina){
     });
 }
 
-
+function converToWhere(columnas,aEncontrar){
+    var resultado = [];
+    for(var columna of columnas){
+        for(var findNoun of aEncontrar){
+            if(columna[5]===findNoun[0]){
+                resultado.push(`${columna[2]}.${columna[3]}='${findNoun[1]}'`);
+            }
+        }
+    }
+    if(resultado.length > 0)
+        return 'where ' + resultado.join(' and ');
+    return '';
+}
 
 module.exports = {
     buscarRutina,
     convertToQuery,
     converToObject,
     executeStatement,
-    buscarRelaciones
+    buscarRelaciones,
+    executePromise,
+    converToWhere
 }

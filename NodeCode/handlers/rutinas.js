@@ -10,10 +10,15 @@ router.use(function (req, res, next) { //Configuracion inicial del router
     next(); //Debido a que la funcion no es asincrona, debemos hacer next para que se libere y no se quede colgado.
 });
 router.post('/',(req,res)=>{
-    let  rutina = req.body['rutina'];
+    let rutina = req.body['rutina'];
+    let encontrar =  req.body['where'];
+    let columnas = req.body['columnas']; 
     rutinas.buscarRutina(rutina).then(result=>{
-        res.json(result);
-
+        //res.json(result);
+        var objectQuery = rutinas.converToObject(result.columnas);
+        console.log(encontrar,result.columnas);
+        var whereQuery =  rutinas.converToWhere(result.columnas,encontrar);
+        res.json(whereQuery);
     });
 })
 module.exports = router; //Es el objeto que se encontrara al exportar este modulo, entonces exportamos el router.
