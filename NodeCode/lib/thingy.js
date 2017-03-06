@@ -71,13 +71,13 @@ function converToObject(columns) {
         if (!tables[column[2]]) {
             tables[column[2]] = [];
         }
-        tables[column[2]].push(column[3]);
+        tables[column[2]].push([column[3],column[4]]);
     });
     return tables;
 }
 
 
-function convertToQuery(objectQuery) {
+function convertToQuery(objectQuery,columnas) {
     var tablesToQuery = '';
     var columnsToQuery = '';
     var tablas = [];
@@ -85,7 +85,17 @@ function convertToQuery(objectQuery) {
     for (var propiedad in objectQuery) {
         tablas.push(propiedad);
         for (let columna of objectQuery[propiedad]) {
-            tablasColumnas.push(propiedad + '.' + columna);
+            if(columna[1]==='S'){
+                tablasColumnas.push(propiedad + '.' + columna[0]);
+            }
+            else{
+                if(columnas!==undefined){
+                    if(columnas.indexOf(columna[0]>-1)){
+                        tablasColumnas.push(propiedad + '.' + columna[0]);
+                    }
+                }
+            }
+                
         }
     }
     tablesToQuery = tablas.join(',');
@@ -133,7 +143,10 @@ function converToWhere(columnas,aEncontrar){
     for(var columna of columnas){
         for(var findNoun of aEncontrar){
             if(columna[5]===findNoun[0]){
-                resultado.push(`${columna[2]}.${columna[3]}='${findNoun[1]}'`);
+                if(findNoun.length!==3)
+                    resultado.push(`${columna[2]}.${columna[3]}='${findNoun[1]}'`);
+                else
+                    resultado.push(`${columna[2]}.${columna[3]} between '${findNoun[1]}' and '${findNoun[2]}'`);
             }
         }
     }

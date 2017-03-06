@@ -15,10 +15,14 @@ router.post('/',(req,res)=>{
     let columnas = req.body['columnas']; 
     rutinas.buscarRutina(rutina).then(result=>{
         //res.json(result);
+        console.log(columnas);
         var objectQuery = rutinas.converToObject(result.columnas);
-        console.log(encontrar,result.columnas);
         var whereQuery =  rutinas.converToWhere(result.columnas,encontrar);
-        res.json(whereQuery);
+        var query = rutinas.convertToQuery(objectQuery,columnas) + ' ' + whereQuery;
+        rutinas.executePromise(query).then(result=>{
+            res.json(result);
+        })
+        
     });
 })
 module.exports = router; //Es el objeto que se encontrara al exportar este modulo, entonces exportamos el router.
