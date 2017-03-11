@@ -141,12 +141,15 @@ function buscarRelaciones(rutina){
 function converToWhere(columnas,aEncontrar){
     var resultado = [];
     for(var columna of columnas){
-        for(var findNoun of aEncontrar){
-            if(columna[5]===findNoun[0]){
-                if(findNoun.length!==3)
-                    resultado.push(`${columna[2]}.${columna[3]}='${findNoun[1]}'`);
+        for(var findNoun in aEncontrar){
+            console.log(findNoun);
+            if(columna[5]===findNoun.toString()){
+                console.log(aEncontrar[findNoun]);
+                if(aEncontrar[findNoun].length!==2)
+                    resultado.push(`${columna[2]}.${columna[3]}='${aEncontrar[findNoun][0]}'`);
                 else
-                    resultado.push(`${columna[2]}.${columna[3]} between '${findNoun[1]}' and '${findNoun[2]}'`);
+                    resultado.push(`${columna[2]}.${columna[3]} between '${aEncontrar[findNoun][0]}' and '${aEncontrar[findNoun][1]}'`);
+                console.log("paso");
             }
         }
     }

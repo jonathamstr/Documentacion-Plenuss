@@ -13,14 +13,20 @@ router.post('/',(req,res)=>{
     let rutina = req.body['rutina'];
     let encontrar =  req.body['where'];
     let columnas = req.body['columnas']; 
+    console.log(encontrar);
     rutinas.buscarRutina(rutina).then(result=>{
-        //res.json(result);
+        console.log(result);
         console.log(columnas);
         var objectQuery = rutinas.converToObject(result.columnas);
         var whereQuery =  rutinas.converToWhere(result.columnas,encontrar);
         var query = rutinas.convertToQuery(objectQuery,columnas) + ' ' + whereQuery;
+        console.log(query);
         rutinas.executePromise(query).then(result=>{
-            res.json(result);
+            enviar = result.map((columna)=>{
+                return { "Array": columna }
+            });
+            console.log(enviar);
+            res.json(enviar);
         })
         
     });
