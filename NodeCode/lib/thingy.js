@@ -100,10 +100,10 @@ function convertToQuery(objectQuery,columnas) {
     }
     tablesToQuery = tablas.join(',');
     columnsToQuery = tablasColumnas.join(',');
-    return `select ${columnsToQuery} from ${tablesToQuery}`;
+    return `select top 15000 ${columnsToQuery} from ${tablesToQuery}`;
 }
 
-
+//Se busca en la base de datos
 function buscarRutina(rutina) { 
     var resultado = {};
     return new Promise(function (resolve, reject) {
@@ -157,6 +157,7 @@ function converToWhere(columnas,aEncontrar){
         return 'where ' + resultado.join(' and ');
     return '';
 }
+//this is a thing
 
 module.exports = {
     buscarRutina,

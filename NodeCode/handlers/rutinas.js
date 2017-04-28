@@ -9,11 +9,14 @@ router.use(function (req, res, next) { //Configuracion inicial del router
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next(); //Debido a que la funcion no es asincrona, debemos hacer next para que se libere y no se quede colgado.
 });
-router.post('/',(req,res)=>{
+router.post('/', (req, res) => {
+    console.log(res.body);
     let rutina = req.body['rutina'];
     let encontrar =  req.body['where'];
     let columnas = req.body['columnas']; 
     console.log(encontrar);
+
+    //Vamos a buscar la rutina
     rutinas.buscarRutina(rutina).then(result=>{
         console.log(result);
         console.log(columnas);
@@ -21,12 +24,20 @@ router.post('/',(req,res)=>{
         var whereQuery =  rutinas.converToWhere(result.columnas,encontrar);
         var query = rutinas.convertToQuery(objectQuery,columnas) + ' ' + whereQuery;
         console.log(query);
-        rutinas.executePromise(query).then(result=>{
-            enviar = result.map((columna)=>{
-                return { "Array": columna }
-            });
-            console.log(enviar);
-            res.json(enviar);
+        rutinas.executePromise(query).then(result => {
+
+
+            /*enviar = result.map((columna) => {
+               console.log(columna);
+               return { "Array": columna }
+           });*/
+
+
+            //console.log(enviar);
+            res.json(result)
+            console.log("Envio la solicitud" + Date.now().toString());
+      
+            
         })
         
     });
