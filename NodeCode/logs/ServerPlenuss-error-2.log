@@ -1,0 +1,51 @@
+ReferenceError: encontrar is not defined
+    at router.post (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\handlers\autentificacion.js:16:17)
+    at Layer.handle [as handle_request] (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\route.js:131:13)
+    at Route.dispatch (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:277:22
+    at Function.process_params (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:271:10)
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\handlers\autentificacion.js:10:5
+    at Layer.handle [as handle_request] (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:312:13)
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:330:12)
+    at next (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:271:10)
+    at Function.handle (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:176:3)
+    at router (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\express\lib\router\index.js:46:12)
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+RequestError: Invalid column name 'SECRETO'.
+    at RequestError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\errors.js:34:12)
+    at Parser.<anonymous> (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\connection.js:207:36)
+    at emitOne (events.js:96:13)
+    at Parser.emit (events.js:188:7)
+    at Parser.<anonymous> (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\token-stream-parser.js:42:15)
+    at emitOne (events.js:96:13)
+    at Parser.emit (events.js:188:7)
+    at readableAddChunk (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\readable-stream\lib\_stream_readable.js:198:18)
+    at Parser.Readable.push (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\readable-stream\lib\_stream_readable.js:157:10)
+    at Parser.Transform.push (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\readable-stream\lib\_stream_transform.js:123:32)
+    at doneParsing (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\stream-parser.js:87:17)
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\infoerror-token-parser.js:46:5
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\infoerror-token-parser.js:13:19
+    at C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\stream-parser.js:224:9
+    at Parser.awaitData (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\stream-parser.js:121:9)
+    at Parser.readUInt32LE (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\token\stream-parser.js:221:12)
+ConnectionError: Connection lost - read ECONNRESET
+    at ConnectionError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\errors.js:12:12)
+    at Connection.socketError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\connection.js:535:28)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at emitErrorNT (net.js:1277:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+ConnectionError: Connection lost - read ECONNRESET
+    at ConnectionError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\errors.js:12:12)
+    at Connection.socketError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\connection.js:535:28)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at emitErrorNT (net.js:1277:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)

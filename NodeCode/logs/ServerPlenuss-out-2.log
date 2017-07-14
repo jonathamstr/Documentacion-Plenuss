@@ -1,0 +1,94 @@
+connected
+undefined
+undefined
+{ P: [ '00001' ] }
+{ columnas: 
+   [ [ 1, 'C01', 'factura', 'id', 'S', 'P' ],
+     [ 2, 'C01', 'factura', 'valor', 'N', 'N' ],
+     [ 3, 'C01', 'factura', 'fecha', 'S', 'F' ] ],
+  relaciones: [] }
+undefined
+{ factura: [ [ 'id', 'S' ], [ 'valor', 'N' ], [ 'fecha', 'S' ] ] }
+P
+[ '00001' ]
+paso
+P
+P
+select top 15000 factura.id,factura.fecha from factura where factura.id='00001'
+1
+Envio la solicitud1494274235567
+connected
+undefined
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+undefined
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected

@@ -20,11 +20,11 @@ router.post('/', (req, res) => {
     rutinas.buscarRutina(rutina).then(result=>{
         console.log(result);
         console.log(columnas);
-        var objectQuery = rutinas.converToObject(result.columnas);
-        var whereQuery =  rutinas.converToWhere(result.columnas,encontrar);
-        var query = rutinas.convertToQuery(objectQuery,columnas) + ' ' + whereQuery;
-        console.log(query);
-        rutinas.executePromise(query).then(result => {
+        var objectQuery = rutinas.converToObject(result.columnas); //Al buscar la rutina vamos a convertirlos en un objectQuery que servira para poder hacer el query
+        var whereQuery = rutinas.converToWhere(result.columnas, encontrar,result.relaciones); //Realizamos la clausula de where que se concatenara 
+        var query = rutinas.convertToQuery(objectQuery,columnas) + ' ' + whereQuery; //Contatenamos el query con las limitaciones del where
+        console.log(query); //Mostramos el query, quitarlo cuando no se tenga el debugging
+        rutinas.executePromise(query).then(result => { //Ejecutamos el query, leemos los datos y enviamos al cliente que nos pidio el servicio
 
 
             /*enviar = result.map((columna) => {
@@ -34,6 +34,7 @@ router.post('/', (req, res) => {
 
 
             //console.log(enviar);
+            console.log(result.length);
             res.json(result)
             console.log("Envio la solicitud" + Date.now().toString());
       

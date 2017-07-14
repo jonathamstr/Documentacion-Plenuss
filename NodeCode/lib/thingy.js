@@ -9,7 +9,7 @@ connection.on('connect', function (err) {
 
 })
 
-
+//Executes a query in the data base that is returned
 function executeStatement(query, callback) {
     var result = [];
     var request = new Request(query,
@@ -37,6 +37,8 @@ function executeStatement(query, callback) {
     connection.execSql(request);
 }
 
+//Same as executeStatement but in the form of a Promise instead of a callback
+//Executes a query in the database 
 function executePromise(query){
     return new Promise((resolve,reject)=>{
         executeStatement(query,(err,result)=>{
@@ -63,17 +65,20 @@ function printResult(err, result) {
 
 }
 
+//Convertimos al objetoQuery que nos ayuda a formar el query despues.
+//Agrega un atributo con el nombre de la tabla y encuentra los valores que son necesarios, busca las columnas y si estas son obligatorias
 
 function converToObject(columns) {
     var tables = {};
 
     columns.forEach(column => {
-        if (!tables[column[2]]) {
-            tables[column[2]] = [];
+        if (!tables[column[2]]) { //Si no se encuentra dentro de nuestro objeto lo agregamos al objeto
+            tables[column[2]] = []; //Hacemos un array con el nombre de la tabla en la columas
         }
         tables[column[2]].push([column[3],column[4]]);
     });
-    return tables;
+    console.log(tables);
+    return tables; //Regresamos el objeto
 }
 
 
@@ -138,7 +143,8 @@ function buscarRelaciones(rutina){
     });
 }
 
-function converToWhere(columnas,aEncontrar){
+
+function converToWhere(columnas,aEncontrar,join){
     var resultado = [];
     for(var columna of columnas){
         for(var findNoun in aEncontrar){
@@ -152,6 +158,9 @@ function converToWhere(columnas,aEncontrar){
                 console.log("paso");
             }
         }
+    }
+    for (var jo of join) {
+        resultado.push(`${jo[1]}.${jo[2]} = ${jo[3]}.${jo[4]}`)
     }
     if(resultado.length > 0)
         return 'where ' + resultado.join(' and ');

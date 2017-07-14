@@ -1,0 +1,12 @@
+You have triggered an unhandledRejection, you may have forgotten to catch a Promise rejection:
+ReferenceError: result is not defined
+    at rutinas.executePromise.then (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\handlers\autentificacion.js:19:12)
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+ConnectionError: Connection lost - read ECONNRESET
+    at ConnectionError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\errors.js:12:12)
+    at Connection.socketError (C:\Users\DELL\Desktop\DocPlenussWeb\Documentacion-Plenuss\NodeCode\node_modules\tedious\lib\connection.js:535:28)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at emitErrorNT (net.js:1277:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)

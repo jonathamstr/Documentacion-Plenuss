@@ -1,0 +1,441 @@
+connected
+connected
+connected
+undefined
+connected
+undefined
+connected
+undefined
+undefined
+undefined
+{ columnas: 
+   [ [ 4, 'VD01', 'p_vede', 'venta', 'S', 'P' ],
+     [ 5, 'VD01', 'p_vede', 'cliente', 'N', 'N' ],
+     [ 6, 'VD01', 'p_vede', 'cantidad', 'S', 'N' ],
+     [ 7, 'VD01', 'p_vede', 'producto', 'S', 'N' ],
+     [ 8, 'VD01', 'p_vede', 'proveedor', 'S', 'N' ],
+     [ 9, 'VD01', 'p_prod', 'desc1', 'S', 'F' ] ],
+  relaciones: [ [ 1, 'p_prod', 'producto', 'p_vede', 'producto', 'VD01' ] ] }
+undefined
+{ p_vede: 
+   [ [ 'venta', 'S' ],
+     [ 'cliente', 'N' ],
+     [ 'cantidad', 'S' ],
+     [ 'producto', 'S' ],
+     [ 'proveedor', 'S' ] ],
+  p_prod: [ [ 'desc1', 'S' ] ] }
+select top 15000 p_vede.venta,p_vede.cantidad,p_vede.producto,p_vede.proveedor,p_prod.desc1 from p_vede,p_prod where p_prod.producto = p_vede.producto
+15000
+Envio la solicitud1494279608640
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+undefined
+connected
+connected
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+connected
+undefined
+undefined
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+undefined
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+undefined
+[ 'SUPERVISOR',
+  'SECRETO',
+  'SUPERVISOR',
+  'A',
+  'SUPERVISOR',
+  'NULL',
+  '7080211',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL',
+  'NULL' ]
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
+connected
